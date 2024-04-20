@@ -5,11 +5,11 @@
   "main": "dist/server/src/index.js",
   "scripts": {
     "clean": "rm -rf dist/ && rm -rf coverage/",
-    "copy-assets": "cp -r ./client ./dist/client",
     "compile-server": "npx tsc -p tsconfig.server.json",
-    "build": "npm run clean && npm run compile-server && npm run copy-assets",
+    "compile-client": "npx tsc -p tsconfig.client.json & webpack --progress --color",
+    "build": "npm run clean && npm run compile-server && npm run compile-client",
     "start": "node dist/server/src/index.js",
-    "dev": "nodemon src/server/index.ts",
+    "dev": "nodemon src/server/index.ts & webpack -w",
     "lint": "npx eslint .",
     "test": "jest",
     "coverage": "jest --coverage"
@@ -34,21 +34,29 @@
   "homepage": "https://github.com/gabrielle95/potato-swaps#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.1.1",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "eslint-plugin-jest": "^28.2.0",
+    "html-webpack-plugin": "^5.6.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "ts-jest": "^29.1.2",
+    "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.7.0"
+    "typescript-eslint": "^7.7.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   }
 }
