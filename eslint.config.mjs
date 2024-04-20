@@ -1,7 +1,5 @@
-// @ts-check
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
-import jest from "eslint-plugin-jest";
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -11,7 +9,7 @@ export default tseslint.config(
     plugins: {
       "@typescript-eslint": tseslint.plugin,
     },
-    files: ["src/**", "tests/**"],
+    files: ["server/src/**", "server/tests/**"],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {

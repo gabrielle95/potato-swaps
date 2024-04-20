@@ -2,13 +2,13 @@
   "name": "potato-swaps",
   "version": "0.0.1",
   "description": "A little database of potato alternatives for those who don't like potatoes",
-  "main": "dist/index.js",
+  "main": "dist/server/index.js",
   "scripts": {
     "clean": "rm -rf dist/ && rm -rf coverage/",
-    "compile": "npx tsc -p tsconfig.build.json",
-    "build": "npm run clean && npm run compile",
-    "start": "node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "compile-server": "npx tsc -p tsconfig.server.json",
+    "build": "npm run clean && npm run compile-server",
+    "start": "node dist/server/index.js",
+    "dev": "nodemon src/server/index.ts",
     "lint": "npx eslint .",
     "test": "jest",
     "coverage": "jest --coverage"
@@ -20,6 +20,7 @@
   "keywords": [
     "node",
     "expressjs",
+    "react",
     "typescript",
     "potato",
     "alternative"
