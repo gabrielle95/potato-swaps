@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, "../../client")));
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
   try {
-    res.send("index.html");
+    res.sendFile("index.html");
   } catch (error) {
     next(error);
   }

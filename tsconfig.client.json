@@ -4,8 +4,6 @@
     "outDir": "./dist/client/src"
   },
   "include": [
-    "./client/src/**.tsx",
-    "./client/src/**/**.tsx",
-    "./client/src/**/**/**.tsx"
+    "./client/src/**/*"
   ]
 }
